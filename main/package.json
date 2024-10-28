@@ -1,0 +1,23 @@
+{
+	"name": "main",
+	"version": "1.0.0",
+	"main": "server.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "node --experimental-strip-types --experimental-transform-types --env-file=.env --watch server.ts",
+		"prod": "node --experimental-strip-types --experimental-transform-types --env-file=.env server.ts",
+		"test": "node --experimental-strip-types --experimental-transform-types --env-file=.env --test \"**/*.spec.ts\" \"**/*.test.ts\" \"**/*.spec.js\" \"**/*.test.js\"",
+		"migrate": "node --experimental-strip-types --env-file=.env -e \"import('./migrations/index.ts').then(m => m.migrate())\"",
+		"build": "docker build .",
+		"compose": "docker-compose -f ../docker-compose.yml up main"
+	},
+	"dependencies": {
+		"express": "^4.21.1",
+		"express-handlebars": "^8.0.1",
+		"mongodb": "^6.10.0"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.7.9"
+	}
+}

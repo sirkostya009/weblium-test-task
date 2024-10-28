@@ -1,0 +1,68 @@
+<script>
+	function toggleDisplay(id) {
+		for (const element of document.querySelectorAll(`#form-${id}, #div-${id}`)) {
+			element.classList.toggle('hidden');
+		}
+	}
+</script>
+
+{{#each cars}}
+<div>
+	<form id="form-{{this._id}}" method="post" action="/{{this._id}}" class="hidden">
+		<input type="hidden" name="id" value="{{this._id}}" />
+		<label>
+			name
+			<input name="name" value="{{this.name}}" />
+		</label>
+		<label>
+			price
+			<input name="price" value="{{this.price}}" />
+		</label>
+		<label>
+			color
+			<input name="color" value="{{this.color}}" />
+		</label>
+		<label>
+			description
+			<input name="description" value="{{this.description}}" />
+		</label>
+		<label>
+			category id
+			<input name="categoryId" value="{{this.categoryId}}" />
+		</label>
+		<label>
+			image url
+			<input name="image" value="{{this.image}}" />
+		</label>
+		<button type="submit">Save</button>
+		<button onclick="toggleDisplay('{{this._id}}')">Cancel</button>
+	</form>
+	<div id="div-{{this._id}}">
+		<h2>{{this.name}}</h2>
+		<p>Desc: {{this.description}}</p>
+		<p>Color: {{this.color}}</p>
+		<p>Price: {{this.price}}</p>
+		<p>Category id: {{this.categoryId}}</p>
+		<img src="{{this.image}}" style="max-width: 400px; max-height: 300px;">
+		<button onclick="toggleDisplay('{{this._id}}')">Edit</button>
+	</div>
+</div>
+{{/each}}
+
+<style>
+	.hidden {
+		display: none;
+	}
+
+	form {
+		max-width: 400px;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	img {
+		max-width: 400px;
+		max-height: 300px;
+	}
+</style>

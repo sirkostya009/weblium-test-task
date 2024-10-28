@@ -1,0 +1,20 @@
+{{> breadcrumbs}}
+<h2>{{category.name}}</h2>
+<img src="{{category.image}}">
+<p>{{category.description}}</p>
+<div>
+    {{#each cars}}
+    <div class="car">
+        <h3><a href="{{../path}}/car-{{this._id}}">{{this.name}}</a></h3>
+        <p>Price: {{this.price}}</p>
+        <p>Color: {{this.color}}</p>
+    </div>
+    {{/each}}
+</div>
+
+<style>
+    img {
+        max-width: 400px;
+        max-height: 300px;
+    }
+</style>

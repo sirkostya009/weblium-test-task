@@ -1,0 +1,8 @@
+{
+	"name": "weblium-test-task",
+	"workspaces": [
+		"main",
+		"cli",
+		"dashboard"
+	]
+}
