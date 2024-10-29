@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 
-const migrations = ["./init.ts"];
+const migrations = [
+	"./init.ts",
+];
 
 export async function migrate() {
 	const client = await new MongoClient(process.env.MONGO_URL!).connect();

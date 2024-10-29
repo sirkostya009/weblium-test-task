@@ -12,7 +12,7 @@ Then, from project root folder, run:
 npm run dev --workspace=dashboard
 ```
 
-To run in production mode (the only difference is no watch mode), just change the script from `dev` to `start`.
+To run in production mode (the only difference is no watch mode), just change the script from `dev` to `prod`.
 
 # Usage
 

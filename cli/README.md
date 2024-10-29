@@ -1,6 +1,6 @@
 # CLI
 
-A simple command line interface that parses and populates a `test-task` Mongo database
+A simple command line interface that parses and populates a Mongo database
 with the provided JSON file.
 
 ## Usage

@@ -12,7 +12,7 @@ Then, from project root folder, run:
 npm run dev --workspace=main
 ```
 
-To run in production mode (the only difference is no --watch command), just change the script from `dev` to `start`.
+To run in production mode (the only difference is no `--watch` command), just change the script from `dev` to `prod`.
 
 ## Migrations
 
@@ -22,7 +22,7 @@ Migrations are very easy to run, just:
 npm run migrate --workspace=main
 ```
 
-`migrate` script only exists in `main` workspace. To add a new migration, add a new file 
+`migrate` script only exists in `main` workspace. To add a new migration, add a new file, and modify the migrations array of `migrations/index.ts`.
 
 You can also run migrations on server startup by setting `MIGRATE` env variable to `true`.
 

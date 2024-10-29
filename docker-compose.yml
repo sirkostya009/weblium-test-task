@@ -15,7 +15,7 @@ services:
     depends_on:
       - database
     environment:
-      - MONGO_URL=mongodb://shared_db:27017
+      - MONGO_URL=mongodb://shared_db:27017/testTask
       - PORT=8080
 
   dashboard:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - database
     environment:
-      - MONGO_URL=mongodb://shared_db:27017
+      - MONGO_URL=mongodb://shared_db:27017/testTask
       - PORT=8081
 
 volumes:
